@@ -95,7 +95,7 @@ function hideTrack() {
 
 function showTrack(track, trigger, useProfile) {
   playTrigger = trigger;
-  (useProfile ? profilePlayer : playingAt).append(player);
+  (useProfile ? profilePlayer : trigger.closest('.track') || playingAt).append(player);
   document.querySelector('#player-title').textContent = track.title;
   player.hidden = false;
   const embed = node(track.audio ? 'audio' : 'iframe');
