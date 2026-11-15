@@ -34,7 +34,6 @@ for (const [id, recording] of Object.entries(composerMedia.recordings)) {
   knownTracks.set(trackId, track);
   person.track = trackId;
 }
-const programme = [...knownTracks.values()];
 
 const search = document.querySelector('#search');
 const list = document.querySelector('#composers');
@@ -48,7 +47,6 @@ let playTrigger;
 const carousel = document.querySelector('#composer-carousel');
 const previous = document.querySelector('#composer-prev');
 const next = document.querySelector('#composer-next');
-const playingAt = document.querySelector('#listening-player');
 const profilePlayer = document.querySelector('#profile-player');
 
 function updateCarousel() {
@@ -90,12 +88,10 @@ function sourceLink(track, className) {
 function hideTrack() {
   media.replaceChildren();
   player.hidden = true;
-  playingAt.append(player);
 }
 
-function showTrack(track, trigger, useProfile) {
+function showTrack(track, trigger) {
   playTrigger = trigger;
-  (useProfile ? profilePlayer : trigger.closest('.track') || playingAt).append(player);
   document.querySelector('#player-title').textContent = track.title;
   player.hidden = false;
   const embed = node(track.audio ? 'audio' : 'iframe');
@@ -130,12 +126,12 @@ function showTrack(track, trigger, useProfile) {
   player.scrollIntoView({block:'nearest'});
 }
 
-function playControl(track, useProfile = false) {
+function playControl(track) {
   if (!track.audio && !track.video && !track.embed) return sourceLink(track, 'play');
   const button = node('button', '▶  Слушать', 'play');
   button.type = 'button';
   button.setAttribute('aria-label', 'Слушать «' + track.title + '»');
-  button.addEventListener('click', () => showTrack(track, button, useProfile));
+  button.addEventListener('click', () => showTrack(track, button));
   return button;
 }
 
@@ -164,10 +160,10 @@ function showProfile(person, trigger, updateUrl = true) {
   document.querySelector('#profile-title').textContent = person.name;
   document.querySelector('#profile-copy').textContent = person.bio;
   const work = document.querySelector('#profile-work');
-  work.textContent = track?.title || person.work || 'Подборка записей готовится.';
+  work.textContent = track?.title || person.work || 'Запись пока не добавлена.';
   const action = document.querySelector('#profile-action');
   action.replaceChildren();
-  if (track) action.append(playControl(track, true));
+  if (track) action.append(playControl(track));
   const portrait = composerMedia.portraits[person.id];
   if (portrait?.source && !portrait.src) {
     const link = node('a', 'Портрет в источнике ↗', 'play');
@@ -239,16 +235,6 @@ document.querySelector('#close-player').addEventListener('click', () => {
 });
 search.addEventListener('input', renderPeople);
 window.addEventListener('hashchange', openHashProfile);
-
-const trackList = document.querySelector('#tracks');
-const trackRows = programme.map(track => {
-  const row = node('article', '', 'track');
-  const title = node('div');
-  title.append(node('h3', track.title), node('p', track.credit));
-  row.append(title, playControl(track));
-  return row;
-});
-trackList.replaceChildren(...trackRows);
 
 renderPeople();
 openHashProfile();
