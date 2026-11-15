@@ -78,3 +78,10 @@
 .plaque-image:hover { opacity: .94; }
 .plaque-example figcaption { margin-top: 12px; font-size: 14px; }
 .plaque-example figcaption a { color: var(--purple); text-decoration: underline; text-underline-offset: 3px; }
+
+.plaque-mobile-hint { display: none; }
+@media (max-width: 620px) {
+  .plaque-image { overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-color: #8a927c var(--paper); }
+  .plaque-image img { width: 800px; max-width: none; height: auto; }
+  .plaque-mobile-hint { display: inline; }
+}
