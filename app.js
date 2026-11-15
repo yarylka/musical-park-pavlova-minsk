@@ -241,13 +241,14 @@ search.addEventListener('input', renderPeople);
 window.addEventListener('hashchange', openHashProfile);
 
 const trackList = document.querySelector('#tracks');
-for (const track of programme) {
+const trackRows = programme.map(track => {
   const row = node('article', '', 'track');
   const title = node('div');
   title.append(node('h3', track.title), node('p', track.credit));
   row.append(title, playControl(track));
-  trackList.append(row);
-}
+  return row;
+});
+trackList.replaceChildren(...trackRows);
 
 renderPeople();
 openHashProfile();
