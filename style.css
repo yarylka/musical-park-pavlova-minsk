@@ -91,3 +91,10 @@
 .bust-example h3 { font: 600 clamp(31px, 4vw, 45px)/1.1 var(--display); letter-spacing: -.025em; margin: 0 0 18px; }
 .bust-example img { width: 100%; max-width: 960px; height: auto; border-radius: 17px; }
 .bust-example figcaption { margin-top: 12px; font-size: 14px; }
+
+
+#profile-years { color: var(--muted); font-size: 15px; }
+.profile-listening #profile-work { font-weight: 600; }
+.profile-biography { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 14px; }
+.profile-biography h3 { margin: 0 0 8px; }
+#profile-source { color: var(--purple); font-size: 14px; text-underline-offset: 3px; text-decoration: underline; }
