@@ -148,11 +148,12 @@ const composerMedia = {
       "sourceName": "Сайт Андрея Мдивани"
     },
     "moniuszko": {
-      "title": "Галька",
-      "credit": "Станислав Монюшко · опера",
-      "video": "8uDkktZ69wo",
-      "source": "https://www.youtube.com/watch?v=8uDkktZ69wo",
-      "sourceName": "YouTube"
+      "title": "«Галька» — ария Йонтека",
+      "credit": "Станислав Монюшко · «Szumią jodły na gór szczycie» · Музыкальная академия им. Феликса Нововейского (AMFN) · CC BY 3.0",
+      "audio": "recordings/halka-jontka.mp3",
+      "source": "https://zpe.gov.pl/a/przejdzmy-do-tematu/D1WMBCjor#D1WMBCjor_pl_main__4C",
+      "sourceName": "Польский образовательный портал ZPE",
+      "license": "https://creativecommons.org/licenses/by/3.0/"
     },
     "oginski": {
       "audio": "recordings/oginski-polonez.ogg",

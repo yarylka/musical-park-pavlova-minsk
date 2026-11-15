@@ -2,7 +2,7 @@
 
 const tracks = [
   {id:'polonaise', title:'Прощание с родиной', credit:'Полонез, традиционно приписываемый М. К. Огинскому · версия для флейты', audio:'https://www.flutetunes.com/tunes/oginsky-polonaise-farewell-to-the-fatherland.mp3', source:'https://www.flutetunes.com/tunes.php?id=492', sourceName:'FluteTunes'},
-  {id:'halka', title:'Галька', credit:'Станислав Монюшко · спектакль Варшавской камерной оперы, 2019', video:'qNIebX92TFY', source:'https://www.youtube.com/watch?v=qNIebX92TFY', sourceName:'YouTube'},
+  {id:'halka', title:'Галька'},
   {id:'spadchyna', title:'Спадчына', credit:'Музыка Игоря Лученка, слова Янки Купалы · ансамбль «Песняры»', video:'hEPvNSNxKdU', source:'https://www.youtube.com/watch?v=hEPvNSNxKdU', sourceName:'YouTube'},
   {id:'malinovka', title:'Малиновка', credit:'Музыка Эдуарда Ханка, слова Анатолия Поперечного · ВИА «Верасы»', source:'https://mp3.retroportal.ru/estrada_ussr/malinovki_zaslysha_golosok_verasy.html', sourceName:'Retroportal'},
   {id:'dolya', title:'Песнь о доле', credit:'Владимир Мулявин и ансамбль «Песняры» · музыкальная притча по Янке Купале', video:'RzTyrxiAdvI', source:'https://www.youtube.com/watch?v=RzTyrxiAdvI', sourceName:'YouTube'}
@@ -120,7 +120,7 @@ function showTrack(track, trigger, useProfile) {
   }
   media.replaceChildren(embed, sourceLink(track));
   if (track.license) {
-    const license = node('a', 'Лицензия CC BY-SA 3.0 ↗');
+    const license = node('a', 'Лицензия ↗');
     license.href = track.license;
     license.target = '_blank';
     license.rel = 'noopener';
