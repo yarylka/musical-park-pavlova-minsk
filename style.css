@@ -60,7 +60,7 @@
 #composers .card-arrow { margin: 2px 4px 0 0; }
 .composer-work { grid-column: 1 / -1; padding: 0 5px; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.35; }
 .profile-portrait { margin-block: 14px; max-width: 220px; }
-.profile-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 4.5; border-radius: 12px; }
+.profile-portrait img { width: 100%; height: auto; border-radius: 12px; }
 .profile-portrait figcaption { margin-top: 4px; font-size: 12px; }
 .profile-portrait a { text-decoration: underline; text-underline-offset: 2px; }
 #profile-recording-note { margin: -4px 0 12px; color: var(--muted); font-size: 14px; }

@@ -93,15 +93,15 @@ function playControl(track) {
   return button;
 }
 
-function portraitUrl(person) {
-  return person.id + '.jpg?v=composer-media-20261116';
+function portraitUrl(person, extension) {
+  return 'portraits/' + person.id + '.' + extension;
 }
 
 function fillPortrait(person) {
   const figure = document.querySelector('#profile-portrait');
   const photo = node('img');
   photo.alt = 'Портрет — ' + person.name;
-  photo.src = portraitUrl(person);
+  photo.src = portraitUrl(person, 'png');
   const info = portraitCredits[person.id];
   const caption = node('figcaption');
   if (info) {
@@ -109,9 +109,9 @@ function fillPortrait(person) {
     link.href = info.source;
     link.target = '_blank';
     link.rel = 'noopener';
-    caption.append(link, ' · кадрирование и тонирование');
+    caption.append(link, ' · стилизованный портрет');
   } else {
-    caption.textContent = 'Из архива проекта';
+    caption.textContent = 'Стилизованный портрет по материалам проекта';
   }
   figure.replaceChildren(photo, caption);
   figure.hidden = false;
@@ -156,7 +156,7 @@ function renderPeople() {
     photo.loading = 'lazy';
     photo.decoding = 'async';
     photo.addEventListener('error', () => photo.replaceWith(placeholder), {once:true});
-    photo.src = portraitUrl(person);
+    photo.src = portraitUrl(person, 'webp');
     button.append(photo);
     button.append(node('span', person.name, 'composer-name'), arrow);
     button.append(node('span', recordings[person.id].title, 'composer-work'));
