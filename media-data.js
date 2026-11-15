@@ -60,16 +60,24 @@ const composerMedia = {
       "credit": "А. Кушнер · CC BY-SA 4.0"
     },
     "tikotsky": {
-      "source": "https://sofiaphilharmonic.com/en/artists/yevgeny-tikotsky"
+      "src": "tikotsky.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Ja%C5%ADhien_Cikocki._%D0%AF%D1%9E%D0%B3%D0%B5%D0%BD_%D0%A6%D1%96%D0%BA%D0%BE%D1%86%D0%BA%D1%96_(1940).jpg",
+      "credit": "Неизвестный фотограф, 1940 · общественное достояние"
     },
     "olovnikov": {
-      "source": "https://ru.wikipedia.org/wiki/%D0%9E%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%2C_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+      "src": "olovnikov.jpg",
+      "source": "https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%B9%D0%BB:%D0%9E%D0%BB%D0%BE%D0%B2%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B8%D1%87.jpg",
+      "credit": "Архивный портрет · источник: «Беларусьфильм» / Википедия"
     },
     "khodosko": {
-      "source": "https://www.belcantofund.com/people/khodosko-o/"
+      "src": "khodosko.jpg",
+      "source": "https://www.belcantofund.com/people/khodosko-o/",
+      "credit": "Портрет · источник: фонд «Бельканто»"
     },
     "mdivani": {
-      "source": "https://www.andreimdivani.com/"
+      "src": "mdivani.jpg",
+      "source": "https://www.andreimdivani.com/",
+      "credit": "Портрет · сайт Андрея Мдивани"
     }
   },
   "recordings": {
