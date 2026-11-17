@@ -241,11 +241,13 @@ function node(tag, text, className) {
 function hideTrack() {
   media.replaceChildren();
   player.hidden = true;
+  if (playTrigger) playTrigger.hidden = false;
+  playTrigger = null;
 }
 
 function showTrack(track, trigger) {
   playTrigger = trigger;
-  document.querySelector('#player-title').textContent = track.title;
+  trigger.hidden = true;
   player.hidden = false;
 
   const audio = node('audio');
@@ -367,8 +369,9 @@ profile.addEventListener('close', () => {
   opener?.focus({preventScroll:true});
 });
 document.querySelector('#close-player').addEventListener('click', () => {
+  const trigger = playTrigger;
   hideTrack();
-  playTrigger?.focus({preventScroll:true});
+  trigger?.focus({preventScroll:true});
 });
 search.addEventListener('input', renderPeople);
 window.addEventListener('hashchange', openHashProfile);
