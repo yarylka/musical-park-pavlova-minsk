@@ -275,15 +275,18 @@ function playControl(track) {
   return button;
 }
 
-function portraitUrl(person, extension) {
-  return 'portraits/' + person.id + '.' + extension;
+function portraitUrl(person) {
+  return 'portraits/' + person.id + '.webp?v=20261117';
 }
 
 function fillPortrait(person) {
   const figure = document.querySelector('#profile-portrait');
   const photo = node('img');
   photo.alt = 'Портрет — ' + person.name;
-  photo.src = portraitUrl(person, 'png');
+  photo.width = 480;
+  photo.height = 600;
+  photo.decoding = 'async';
+  photo.src = portraitUrl(person);
   const info = portraitCredits[person.id];
   const caption = node('figcaption');
   if (info) {
@@ -344,7 +347,9 @@ function renderPeople() {
     photo.loading = 'lazy';
     photo.decoding = 'async';
     photo.addEventListener('error', () => photo.replaceWith(placeholder), {once:true});
-    photo.src = portraitUrl(person, 'webp');
+    photo.width = 480;
+    photo.height = 600;
+    photo.src = portraitUrl(person);
     button.append(photo);
     button.append(node('span', person.name, 'composer-name'), arrow);
     button.append(node('span', recordings[person.id].title, 'composer-work'));

@@ -54,7 +54,7 @@
 }
 #composers .composer:hover { background: var(--lilac); }
 .composer-portrait, .composer-placeholder { grid-column: 1 / -1; width: 100%; aspect-ratio: 4 / 4.5; border-radius: 11px; }
-.composer-portrait { display: block; object-fit: cover; object-position: center 25%; background: var(--lilac); }
+.composer-portrait { display: block; height: auto; object-fit: cover; object-position: center 25%; background: var(--lilac); }
 .composer-placeholder { display: grid; place-content: center; background: var(--lilac); color: var(--purple); font-size: 48px; }
 .composer-name { padding: 2px 5px 0; line-height: 1.25; }
 #composers .card-arrow { margin: 2px 4px 0 0; }
